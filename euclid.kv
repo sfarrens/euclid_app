@@ -1,0 +1,86 @@
+
+<RootWidget>:
+
+   canvas:
+      Color: 
+         rgba: 0.94, 0.91, 0.83, 1.0
+      Rectangle:
+         pos: self.pos
+         size: self.size
+
+   TextInput:
+      id: text_box
+      font_size: self.height / 1.5
+      size_hint: 0.6, 0.1     
+      pos_hint: {'center_x':.5, 'center_y':.9}
+      text: ''
+      background_active: 'grey.png'
+      background_normal: 'grey.png'
+      cursor_color: 1.0, 0.0, 0.0, 1.0
+      multiline: False
+      border: 4, 4, 4, 10
+      on_text: root.handle_text(self.text)
+
+   ScrollView:
+      id: scroll
+      size_hint: 0.95, 0.7
+      pos_hint: {'center_x': .5, 'center_y': .4}
+      do_scroll_x: False
+
+      GridLayout:
+         id: grid
+         cols: 1
+         padding: 2
+         spacing: 5
+         size_hint_y: None
+         height: self.minimum_height
+
+<NewButton>:
+
+   size_hint: 1, None
+   font_size: 30
+   background_color: 0.4, 0.2, 0.6, 0.9
+   background_normal: ''
+   on_press: root.buttonHandler(root.text)
+
+<PopupHandler>:  
+       
+   title_size: 50
+   title_align: 'center'
+   size_hint: 0.8, 0.8
+   background: 'black.png'
+
+   BoxLayout:
+      orientation: 'vertical'
+
+      Button:
+         text: 'X'
+         size_hint: 0.1, 0.1
+         pos_hint: {'right':1, 'center_y':1}
+         on_press: root.buttonHandler()
+
+      ScrollView:
+         
+         GridLayout:
+            cols: 1
+            padding: 2
+            spacing: 50
+            size_hint_y: None
+            height: self.minimum_height
+
+            Label:
+               text: root.text1
+               text_color: 1, 1, 1, 1
+               font_size: 30
+               text_size: self.width, None
+               size_hint_y: None
+               pos_hint_x: 0.5
+               height: self.texture_size[1]  
+
+            Label:
+               text: root.text2
+               text_color: 1, 1, 1, 1
+               font_size: 25
+               text_size: self.width, None
+               size_hint_y: None
+               height: self.texture_size[1]
