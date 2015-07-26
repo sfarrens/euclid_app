@@ -3,19 +3,21 @@
 
    canvas:
       Color: 
-         rgba: 0.94, 0.91, 0.83, 1.0
+         rgba: 0.922, 0.922, 0.922, 1.0
       Rectangle:
          pos: self.pos
          size: self.size
 
    TextInput:
       id: text_box
+      font_name: 'Arial'
       font_size: self.height / 1.5
-      size_hint: 0.6, 0.1     
+      foreground_color: 0.475, 0.475, 0.475, 1.0 
+      size_hint: 0.6, 0.15     
       pos_hint: {'center_x':.5, 'center_y':.9}
       text: ''
-      background_active: 'grey.png'
-      background_normal: 'grey.png'
+      background_active: 'searchbox_active.png'
+      background_normal: 'searchbox_normal.png'
       cursor_color: 1.0, 0.0, 0.0, 1.0
       multiline: False
       border: 4, 4, 4, 10
@@ -39,9 +41,9 @@
 
    size_hint: 1, None
    font_size: 30
-   background_color: 0.4, 0.2, 0.6, 0.9
-   background_normal: ''
-   on_press: root.buttonHandler(root.text)
+   background_down: 'button_down.png'
+   background_normal: 'button_normal.png'
+   on_release: root.buttonHandler(root.text)
 
 <PopupHandler>:  
        
@@ -57,6 +59,8 @@
          text: 'X'
          size_hint: 0.1, 0.1
          pos_hint: {'right':1, 'center_y':1}
+         #background_down: 'close_button_down.png'
+         #background_normal: 'close_button_normal.png'
          on_press: root.buttonHandler()
 
       ScrollView:
@@ -71,10 +75,9 @@
             Label:
                text: root.text1
                text_color: 1, 1, 1, 1
-               font_size: 30
+               font_size: 40
                text_size: self.width, None
                size_hint_y: None
-               pos_hint_x: 0.5
                height: self.texture_size[1]  
 
             Label:

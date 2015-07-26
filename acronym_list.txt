@@ -1,0 +1,12 @@
+2dF = Two Degree Field 
+2MASS = Two Micron All Sky Survey 
+4MOST = 4-meter Multi Object Spectroscopic Telescope 
+A&A = Authentication and Authorization 
+ABCL = As Build Configuration List 
+ACRD = Additional Cosmology Requirements Document 
+ACS = Advanced Camera for Survey 
+AD = Applicable Document 
+ADC = Analog to Digital Converter 
+OU-LE3 = Oragnisational Unit for Level-3 Data
+SGS = Science Ground Segment 
+SWG = Science Working Group 
